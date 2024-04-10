@@ -1,0 +1,68 @@
+{
+	"name": "@toolmate/plugin-google",
+	"description": "Google plugin for toolmate.",
+	"version": "0.0.0",
+	"author": "Anatoly Voevodin",
+	"license": "MIT",
+	"keywords": [
+		"auth",
+		"authentication",
+		"authorization",
+		"oauth2",
+		"google",
+		"toolmate",
+		"plugin"
+	],
+	"type": "module",
+	"main": "dist/main.js",
+	"types": "dist/main.d.ts",
+	"exports": {
+		".": "./dist/main.js"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"prepublishOnly": "npm run lint && npm run build",
+		"build": "tsc --p ./tsconfig-build.json && vite build",
+		"preview": "vite preview",
+		"lint": "prettier --check . && eslint . && tsc --p ./tsconfig-build.json --noEmit",
+		"prettify": "prettier --write .",
+		"release": "release-it"
+	},
+	"devDependencies": {
+		"@types/google.accounts": "^0.0.14",
+		"@types/js-cookie": "^3.0.6",
+		"@types/node": "^20.11.30",
+		"@typescript-eslint/eslint-plugin": "^7.3.1",
+		"@typescript-eslint/parser": "^7.3.1",
+		"eslint": "^8.57.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-prettier": "^5.1.3",
+		"eslint-plugin-solid": "^0.13.2",
+		"path": "^0.12.7",
+		"prettier": "^3.2.5",
+		"release-it": "^17.1.1",
+		"typescript": "^5.2.2",
+		"vite": "^5.2.0",
+		"vite-plugin-dts": "^3.7.3"
+	},
+	"dependencies": {
+		"js-cookie": "^3.0.5"
+	},
+	"peerDependencies": {
+		"@toolmate/core": "^0.1.2"
+	},
+	"homepage": "https://github.com/anvoevodin/toolmate-plugin-google",
+	"url": "https://github.com/anvoevodin/toolmate-plugin-google",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/anvoevodin/toolmate-plugin-google.git"
+	},
+	"bugs": {
+		"url": "https://github.com/anvoevodin/toolmate-plugin-google/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
